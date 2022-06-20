@@ -1,0 +1,24 @@
+what is kubernetes?
+Kubernetes is an orchestration tool helps in managing containers.It is developed by google. Later theymade it opensource.Now it is under CNCF
+
+What are the components in kubernetes master?
+Kube-apiserver: Responsible for interacting with other kubernetes components.
+Control-Manager: It contains many sub components like replication controller and Nodecontroler etc 
+KubeScheduler: Scheduler schedules apps or containers on nodes but it will not createpods on nodes.
+etcd server: Stores information about Cluster.Basically it is key:value store.stores small data[runs on port  2379]
+
+What are components of workernodes?
+kubelet: it is the one which creates pod on the node as per the instruction.
+kubeproxy: one pod wants to communicate with other pod in another node 
+
+what is kubectl?
+It is command utility tools using this we are communicating with kubernetes
+
+what is pod?
+Pod is smallest entity in kubernetes which hosts containers.
+
+If we type kubectl create pod what are the things happening in background?
+First the kube-apiserver recieves the command and create a pod without assigning to any node.Then the info is updated to etcd and updates user the pod is created.
+scheduler which is continously monitoring kube-apiserver see the pod with no node.Schduler identifies the right node to place the pod and communicate to kubeapi.apiserverupdates the details in etcd.
+api server pass info to kubelet.Kubelet instructs Container runtime engine like docker to create pod with specified image.
+
