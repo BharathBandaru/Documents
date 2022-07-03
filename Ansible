@@ -1,0 +1,11 @@
+Ansible is a Configuration Management tool which is written in python.We instruct ansible by writing yaml files.
+Ansible runs on push mechanism and it is agentless.
+Ansible is Idempotent but not shell script [100 times you run it runs same]
+Only when we do ssh we can know the node is active or not or we can attach the node to nagios to see whether it is available or not.
+
+Chef and puppet are also Configuration management tools which are of push mechanism.
+In push mechanism we need agent running in node which checks the server(master) for instructions.
+
+Ansible,chef,puppet Server(master) should be linux and node should be any.
+Ansible gives suitable environment to our applications to work.
+we can do Change management,provisioning,automation,orchestration using ansible.
