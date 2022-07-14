@@ -42,7 +42,7 @@ ansible all -m setup | filter 'ansible_distribution'
   yum:
    name: httpd
    state: present
- -when: ansible_os_family == Redhat    or -when: not ansible_os_family == Redhat   
+ -when: ansible_os_family == "Redhat"    or -when: not ansible_os_family == "Redhat"   
 
 
   
