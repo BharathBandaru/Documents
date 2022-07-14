@@ -9,3 +9,40 @@ In push mechanism we need agent running in node which checks the server(master) 
 Ansible,chef,puppet Server(master) should be linux and node should be any.
 Ansible gives suitable environment to our applications to work.
 we can do Change management,provisioning,automation,orchestration using ansible.
+
+
+Ansible Playbook:
+================================
+---
+-hosts: all
+ tasks:
+ -name:install apache
+  yum:
+  name: httpd
+  state: present
+=================================  
+  Ansible debug module is used to showing the output on screen.Debug module is used along with msg
+  There are 2 types of folders Group_vars,Host_vars
+  Group_vars is used to specify variables for all the group of machines
+  Host_vars is used to specify varibales specific to a machine
+#### always the name in inventory file and the file under the folder of vars should be matched ###  
+### when the both host and   
+  
+  
+setup module is used to check the facts that are gathering by ansible and we can use filter to filter out the results
+ansible all -m setup | more
+ansible all -m setup | filter 'ansible_distribution'
+
+======================================== Install APACHE on Redhat servers================================
+---
+-hosts: all
+ become: yes
+ tasks:
+ -name:install apache on redhat servers
+  yum:
+   name: httpd
+   state: present
+ -when: ansible_os_family == Redhat    or -when: not ansible_os_family == Redhat   
+
+
+  
