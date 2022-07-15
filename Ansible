@@ -45,4 +45,8 @@ ansible all -m setup | filter 'ansible_distribution'
  -when: ansible_os_family == "Redhat"    or -when: not ansible_os_family == "Redhat"   
 
 
+**tags are used to run a or group of plays in a big playbook.we can use ansible-playbook xyz.yml --tags "tagname" or --skip-tags "tagname"
+**register stores the value of the task executed
+
+
   
