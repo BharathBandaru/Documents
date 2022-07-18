@@ -45,8 +45,9 @@ ansible all -m setup | filter 'ansible_distribution'
  -when: ansible_os_family == "Redhat"    or -when: not ansible_os_family == "Redhat"   
 
 
-**tags are used to run a or group of plays in a big playbook.we can use ansible-playbook xyz.yml --tags "tagname" or --skip-tags "tagname"
-**register stores the value of the task executed
-
-
+** tags are used to run a or group of plays in a big playbook.we can use ansible-playbook xyz.yml --tags "tagname" or --skip-tags "tagname"
+** register stores the value of the task executed,we can also do error handling with using when in it
+** debug module is used to print the output on the screen,it is used along with msg
+** to call a variable in ansible we will use "{{  }}"
+** The default behavior of ansible is to stop at the task which is failed to overcomem the task we can use ignore_errors: yes
   
