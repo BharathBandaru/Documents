@@ -1,0 +1,10 @@
+Why kubernetes when we can create containers using docker?
+The benefits of kubernetes is that 
+* Autoscaling
+* Scheduling
+* Self healing capabilities
+* monitor all pods
+* running pods on multiple nodes
+
+Orchestration is basiclly running,managing,scaling,monitoring all the pods
+we can have a image policy webhook which checks the images we are pulling to create pod is from valid resource.
